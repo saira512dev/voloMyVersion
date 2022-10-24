@@ -27,6 +27,16 @@
     "client": "npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
+  "builds": [
+    {
+      "src": "./backend/server.js",  
+      "use": "@vercel/node"
+    },
+    {
+      "src": ".build",   
+      "use": "@vercel/static"
+    }
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
