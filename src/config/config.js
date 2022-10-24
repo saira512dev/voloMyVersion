@@ -1,3 +1,3 @@
-const API_URL = "https://volomyversion.vercel.app:1212"
+const API_URL = ""
 
 export default API_URL;
