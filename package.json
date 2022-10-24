@@ -25,18 +25,9 @@
     "start": "react-scripts start",
     "server": "npm start --prefix backend",
     "client": "npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "run dev"
   },
-  "builds": [
-    {
-      "src": "./backend/server.js",  
-      "use": "@vercel/node"
-    },
-    {
-      "src": ".build",   
-      "use": "@vercel/static"
-    }
-  ],
   "eslintConfig": {
     "extends": [
       "react-app",
