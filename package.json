@@ -22,11 +22,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "server": "npm start --prefix backend",
     "client": "npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "run dev"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "eslintConfig": {
     "extends": [
