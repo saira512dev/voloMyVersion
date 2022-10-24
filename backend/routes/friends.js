@@ -4,7 +4,7 @@ const friendController = require("../controllers/friend");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/allFriends", ensureAuth, friendController.getAllFriends);
-router.get("/allUsers",ensureAuth,friendController.getAllUsers);
+router.get("/allUsers",friendController.getAllUsers);
 router.post("/addFriend", ensureAuth, friendController.addFriend);
 router.get("/searchUsers/:query", ensureAuth, friendController.searchUsers);
 // router.put('/approve', friendController.acceptFriend)
