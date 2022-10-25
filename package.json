@@ -23,9 +23,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "proxy": "http://localhost:5000/",
+    "proxy": "http://localhost:1212/",
     "server": "npm start --prefix backend",
     "client": "npm start",
+    "build": "react-scripts build",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "eslintConfig": {
