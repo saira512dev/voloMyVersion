@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "proxy": "http://localhost:5000/",
     "server": "npm start --prefix backend",
     "client": "npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
