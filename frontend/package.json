@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build --output public"
+    "build": "react-scripts build",
+    "postbuild": "mv build/ ../build"
   },
   "eslintConfig": {
     "extends": [
