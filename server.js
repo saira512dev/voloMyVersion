@@ -16,7 +16,7 @@ const path = require("path");
 const cors = require("cors");
 app.use(
   cors({
-    origin: "https://volo2.vercel.app:3000",
+    origin: "https://volo2.vercel.app",
     credentials: true,
   })
 );
