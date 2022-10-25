@@ -47,6 +47,12 @@ exports.logout = (req, res) => {
   });
 };
 
+
+exports.test = (req, res) => {
+  res.json("CONNECTED")
+  return;
+};
+
 exports.postSignup = (req, res, next) => {
   console.log(req.body.email);
 
