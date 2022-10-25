@@ -23,7 +23,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "proxy": "http://localhost:1212/",
     "server": "npm start --prefix backend",
     "client": "npm start",
     "build": "react-scripts build",
