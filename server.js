@@ -59,7 +59,7 @@ app.use("/", mainRoutes);
 app.use("/todos", todoRoutes);
 app.use("/friends", friendRoutes);
 
-if(process.env.NODE_ENV !== 'production'){
+if(process.env.NODE_ENV == 'production'){
   const path = require('path')
 
   app.get('/', (req, res) => {
