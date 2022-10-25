@@ -59,6 +59,15 @@ app.use("/", mainRoutes);
 app.use("/todos", todoRoutes);
 app.use("/friends", friendRoutes);
 
+if(process.env.NODE_ENV !== 'production'){
+  const path = require('path')
+
+  app.get('/', (req, res) => {
+    app.use(express.static(path.resolve(__dirname, 'client', 'build')))
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
+
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 });
