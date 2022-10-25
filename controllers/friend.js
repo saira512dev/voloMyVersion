@@ -13,6 +13,7 @@ module.exports = {
         }
     },
     getAllUsers: async (req,res)=>{
+        console.log(req.user)
     try{
             const users = await User.find({ _id: { $ne: req.user.id } })
             res.send({users: users, authUserId: req.user.id})

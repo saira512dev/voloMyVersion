@@ -21,6 +21,8 @@ app.use(
   })
 );
 
+app.use(express.static("frontend/build"));
+
 require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
