@@ -202,69 +202,6 @@ const SignUp = () => {
         </Box>
       </Container>
     </ThemeProvider>
-      {/* <form action="" method="POST">
-        <div className="messages">
-          {displayErrorMessage()}
-          {successMessage()}
-        </div>
-
-        <div>
-          <label> Username </label>
-          <input
-            onChange={handleName}
-            type="text"
-            name="userName"
-            placeholder="Enter User Name"
-          />
-        </div>
-        <div>
-          <label> Email </label>
-          <input
-            onChange={handleEmail}
-            type="email"
-            name="email"
-            placeholder="Enter Email"
-          />
-        </div>
-        <div>
-          <label> Password </label>
-          <input
-            onChange={handlePassword}
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-            id="password"
-          />
-          <span className="eye">
-            <i
-              className="fa-sharp fa-solid fa-eye-slash"
-              id="togglePassword"
-            ></i>
-          </span>
-        </div>
-        <div>
-          <label> Confirm Password </label>
-          <input
-            onChange={handleConfirmPassword}
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            id="password2"
-          />
-          <span className="eye">
-            <i
-              className="fa-sharp fa-solid fa-eye-slash"
-              id="togglePassword2"
-            ></i>
-          </span>
-        </div>
-        <input
-          onClick={handleSubmit}
-          type="submit"
-          value="Sign In"
-          id="sign__in"
-        />
-      </form> */}
       </main>
   );
 };

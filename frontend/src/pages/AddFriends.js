@@ -6,7 +6,7 @@ import UserCard from "../components/UserCard";
 import SearchBar from "../components/SearchBar";
 import API_URL from '../config/config'
 
-const Friends = () => {
+const AddFriends = () => {
     const [users, setUsers] = useState([])
     const [authUserId, setAuthUserId] = useState('')
     const [searchText, setSearchText] = useState([])
@@ -46,7 +46,7 @@ const Friends = () => {
             },
           });
           const data = await response.json();
-          //console.log(data)
+          console.log(data.users)
           setUsers(data.users)
           setAuthUserId(data.authUserId)
           console.log(users)
@@ -77,7 +77,7 @@ const Friends = () => {
             </div>
             <div class="allUsers">
             { users.map(user => {
-              return  <UserCard name={user.userName} isFriend={user._d===authUserId} key={user._id}/>
+              return  <UserCard name={user.userName} friendId={user._id}  key={user._id}/>
            })
            }
             </div>
@@ -90,4 +90,4 @@ const Friends = () => {
   );
 };
 
-export default Friends;
+export default AddFriends;
