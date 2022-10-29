@@ -45,7 +45,7 @@ export default function MenuBar() {
         // setAuthUserId(data.authUserId)
         console.log(friendRequests)
       } catch(err){
-          console.log(err);
+          console.log(err)
       }
       
     }
@@ -55,7 +55,7 @@ export default function MenuBar() {
 
 
   const handleSubmit = () => {
-    const response = fetch("http://localhost:1212/logout", {
+    const response = fetch(`${API_URL}/logout`, {
       method: "GET",
       withCredentials: true,
       credentials: 'include',
