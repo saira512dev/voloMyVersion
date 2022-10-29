@@ -164,7 +164,7 @@ module.exports = {
         try{
             await Friend.findOneAndDelete({_id:req.body.id})
             console.log('Deleted request')
-            res.json('Deleted It')
+            res.send('Deleted It')
         }catch(err){
             console.log(err)
         }
