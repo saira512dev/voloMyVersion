@@ -40,7 +40,7 @@ export default function MenuBar() {
           },
         });
         const data = await response.json();
-     console.log(data)
+        console.log(data)
         setFriendRequests(data.friendRequests)
         // setAuthUserId(data.authUserId)
         console.log(friendRequests)
@@ -83,11 +83,11 @@ export default function MenuBar() {
           VOLO
         </Typography>
         <Stack direction="row" spacing={2}>
-          <div class="hambergurMenuIcon hidden" onClick={showMobileMenu}>
+          <div className="hambergurMenuIcon hidden" onClick={showMobileMenu}>
             <MenuIcon />
           </div>
           
-          <div class="desktopMenu">
+          <div className="desktopMenu">
             <Button color="inherit">
               <PlaylistAddCircleIcon />
             </Button>
