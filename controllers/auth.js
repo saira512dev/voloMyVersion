@@ -39,6 +39,7 @@ exports.logout = (req, res) => {
   console.log(req.user)
   req.logout(() => {
     console.log("User has logged out.");
+    res.send("logged out")
   });
   req.session.destroy((err) => {
     if (err)
