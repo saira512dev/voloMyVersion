@@ -83,9 +83,28 @@ main{
   width: 300px;
 }
 
+.friendRequestCard {
+  width: 350px;
+}
+
+.friendRequestCard .cardContent{
+  display: flex;
+  gap: 1rem;
+}
+
 @media (max-width: 650px) {
   .userCard {
     width: 170px;
+  }
+
+  .friendRequestCard {
+    width: 190px;
+  }
+  
+  .friendRequestCard .cardContent{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { AppBar, Stack, Button, Link} from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -15,17 +15,43 @@ import PlaylistAddCircleIcon from "@mui/icons-material/PlaylistAddCircle";
 import FeaturedPlayListIcon from "@mui/icons-material/FeaturedPlayList";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import PeopleIcon from '@mui/icons-material/People';
+import API_URL from "../config/config";
 
 export default function MenuBar() {
   const navigate = useNavigate();
   const [hideMobileMenu, setHideMobileMenu] = useState(true);
+  const [friendRequests, setFriendRequests] = useState([])
+
+  useEffect(() => {
+    const getFriendRequests = async() => {
+      try{
+          const response = await fetch(`${API_URL}/friends/friendRequests`, {
+          method: "GET",
+          withCredentials: true,
+          credentials: 'include',
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await response.json();
+     console.log(data)
+        setFriendRequests(data.friendRequests)
+        // setAuthUserId(data.authUserId)
+        console.log(friendRequests)
+      } catch(err){
+          console.log(err);
+      }
+      
+    }
+    
+    getFriendRequests()
+    },[])
 
 
   const handleSubmit = () => {
@@ -71,7 +97,7 @@ export default function MenuBar() {
               href="/friendRequests"
               aria-label="friends"
             >
-              <Badge badgeContent={4} color="secondary">
+              <Badge badgeContent={friendRequests.length} color={friendRequests.length > 0 ? "secondary" : "primary"}>
                   <PeopleIcon />
               </Badge>            
             </Button>
@@ -100,9 +126,9 @@ export default function MenuBar() {
                 href="/friendRequests"
                 aria-label="friends"
               >
-                  <Badge badgeContent={4} color="secondary">
-                      <PeopleIcon />
-                  </Badge>
+                  <Badge badgeContent={friendRequests.length} color={friendRequests.length > 0 ? "secondary" : "primary"}>
+                  <PeopleIcon />
+              </Badge> 
               </Button>
               </ListItem>
               <ListItem disablePadding>
