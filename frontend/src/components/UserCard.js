@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, Card } from '@mui/material';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
@@ -13,7 +14,7 @@ import RunningWithErrorsIcon from '@mui/icons-material/RunningWithErrors';
 export default function UserCard(props) {
   const [requestAlreadySent, setRequestAlreadySent] = useState(false)
   const [isFriend, setIsFriend] = useState(false)
-
+  const navigate = useNavigate()
   // return console.log(props)
   const friendRequest = {
     user1: props.friendId
@@ -21,8 +22,6 @@ export default function UserCard(props) {
 
 
   useEffect(() => {
-    //define isfriend to find out if the user is a friend
-
     const checkIfFriend = async() => {
       try{
           const response = await fetch(`${API_URL}/friends/isFriend/${props.friendId}`, {
@@ -77,6 +76,7 @@ export default function UserCard(props) {
         body: JSON.stringify(friendRequest),
       });
       const data = await response.json();
+      navigate("/addFriends");
 
       //console.log(data)
      // setFriends(data.friends)

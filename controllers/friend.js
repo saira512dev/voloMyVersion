@@ -7,7 +7,7 @@ module.exports = {
         try{
             const friends = await Friend.find({ $and: [{approved: true}, {$or: [{user1: req.user.id}, {user2: req.user.id}] }]})
             .populate('user1').populate('user2')
-            console.log(friends)
+            // console.log(friends)
             res.send({friends: friends, authUserId: req.user.id})
            // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
@@ -31,7 +31,7 @@ module.exports = {
         }
     },
     getAllUsers: async (req,res)=>{
-        console.log(req.user)
+        // console.log(req.user)
     try{
             const users = await User.find({ _id: { $ne: req.user.id } })
             
