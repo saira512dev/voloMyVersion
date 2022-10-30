@@ -56,7 +56,7 @@ const AddFriends = () => {
         
     }
    getUsers()
-  },[])
+  })
   console.log(searchText)
   return (
     <>
