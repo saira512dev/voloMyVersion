@@ -56,7 +56,7 @@ const AddFriends = () => {
         
     }
    getUsers()
-  })
+  },[])
   console.log(searchText)
   return (
     <>
@@ -77,7 +77,7 @@ const AddFriends = () => {
             </div>
             <div class="allUsers">
             { users.map(user => {
-              return  <UserCard name={user.userName} friendId={user._id}  key={user._id}/>
+              return  <UserCard isFriend={false} name={user.userName} friendId={user._id}  key={user._id}/>
            })
            }
             </div>

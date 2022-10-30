@@ -104,20 +104,20 @@ module.exports = {
             if(friendship.length > 0){
                 if(!friendship[0].approved){
                     await Friend.remove({_id: friendship[0]._id})
-                    res.status(200).send("Friend Request removed")
+                    res.status(200).json("removed")
                     console.log('Friend Request removed')
                     return; 
                 }
 
                 await Friend.findOneAndDelete({_id: friendship[0]._id})
                 console.log('Friend Removed')
-                res.status(200).send("Friend Removed")
+                res.status(200).json("removed")
                 return;
             }
 
             await Friend.create({user1: req.user.id, user2: req.body.user1, approved: false})
             console.log('Friend request sent!')
-            res.status(200).send('request sent')
+            res.status(200).json('request sent')
         }catch(err){
             console.log(err)
         }

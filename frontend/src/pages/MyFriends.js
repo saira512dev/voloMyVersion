@@ -59,7 +59,7 @@ const getFriends = async() => {
 }
 
 getFriends()
-})
+},[])
 
 console.log(searchText)
   return (

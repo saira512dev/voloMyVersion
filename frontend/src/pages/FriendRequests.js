@@ -20,7 +20,7 @@ const FriendRequests = () => {
           },
         });
         const data = await response.json();
-     console.log(data)
+        console.log(data)
         setFriendRequests(data.friendRequests)
         // setAuthUserId(data.authUserId)
         console.log(friendRequests)
@@ -31,7 +31,7 @@ const FriendRequests = () => {
     }
     
     getFriendRequests()
-    })
+    }, [])
     
 
   
@@ -48,7 +48,7 @@ const FriendRequests = () => {
           <div class="friends-content">
             <h2>FRIEND REQUESTS</h2>
             { friendRequests.map(friendRequest => {
-              return  <FriendRequestCard name={friendRequest.user1.userName} requestId={friendRequest._id}  key={friendRequest._id}/>
+              return  <FriendRequestCard  name={friendRequest.user1.userName} requestId={friendRequest._id}  key={friendRequest._id}/>
            })
            }
           </div>
