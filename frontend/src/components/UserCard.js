@@ -13,7 +13,7 @@ import RunningWithErrorsIcon from '@mui/icons-material/RunningWithErrors';
 
 export default function UserCard(props) {
   const [requestAlreadySent, setRequestAlreadySent] = useState(false)
-  const [isFriend, setIsFriend] = useState(false)
+  const [isFriend, setIsFriend] = useState(props.isFriend)
   const navigate = useNavigate()
   // return console.log(props)
   const friendRequest = {
@@ -76,9 +76,14 @@ export default function UserCard(props) {
         body: JSON.stringify(friendRequest),
       });
       const data = await response.json();
-      navigate("/addFriends");
-
-      //console.log(data)
+      console.log(data)
+      if(data == "removed"){
+        setIsFriend(false)
+        setRequestAlreadySent(false)
+      } else {
+        setIsFriend(false)
+        setRequestAlreadySent(true)
+      }
      // setFriends(data.friends)
       //console.log(friends)
     } catch(err){
@@ -100,17 +105,20 @@ export default function UserCard(props) {
        
       />
       <CardContent>
-      {  isFriend ? 
-      <IconButton onClick={addFriend} aria-label="add friend">
-      <PersonRemoveIcon />
-    </IconButton> : requestAlreadySent  ? 
-          <Button value="pending" onClick={addFriend} variant="outlined" startIcon={<RunningWithErrorsIcon />}>
-          Pending
-        </Button> :
-          <IconButton onClick={addFriend} aria-label="remove friend">
+      
+    
+         { !isFriend && !requestAlreadySent && <IconButton onClick={addFriend} aria-label="remove friend">
           <PersonAddIcon />
         </IconButton> 
         }
+        { requestAlreadySent  && 
+          <Button value="pending" onClick={addFriend} variant="outlined" startIcon={<RunningWithErrorsIcon />}>
+          Pending
+        </Button> }
+        {  isFriend && 
+      <IconButton onClick={addFriend} aria-label="add friend">
+      <PersonRemoveIcon />
+    </IconButton> }
       </CardContent>
      
     </Card>
