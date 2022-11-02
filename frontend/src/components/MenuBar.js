@@ -101,7 +101,7 @@ export default function MenuBar() {
                   <PeopleIcon />
               </Badge>            
             </Button>
-            <Button color="inherit">Settings</Button>
+            <Button color="inherit" href='/settings'>Settings</Button>
             <Button color="inherit" onClick={handleSubmit}>
               Logout
             </Button>

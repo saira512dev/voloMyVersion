@@ -1,0 +1,7 @@
+                       <h1> Settings </h1>
+                        <div>
+                            <label htmlFor='avatar-img'> Update Icon </label>
+                            <input type='file' accept='image/*' id='select-image' onChange={e => setSelectImage(e.target.files[0])} />
+                            {previewImage && selectImage && (<img src={previewImage} alt={selectImage.name} height='100px' />)}
+                        </div>
+                        <button onClick={uploadImg}> Upload Image </button>

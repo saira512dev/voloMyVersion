@@ -7,6 +7,7 @@ import ForgotPass from "./pages/ForgotPass";
 import Dashboard from "./pages/Dashboard";
 import FriendRequests from "./pages/FriendRequests";
 import MyFriends from "./pages/MyFriends";
+import Settings from "./pages/Settings";
 import AddFriends from "./pages/AddFriends";
 import RequireAuth from "./middleware/RequireAuth";
 import RedirectIfAuthenticated from "./middleware/RedirectIfAuthenticated";
@@ -43,6 +44,10 @@ function App() {
       <Route
           path="/addFriends"
           element={<RequireAuth Component={AddFriends} />}
+        />
+        <Route
+          path="/settings"
+          element={<RequireAuth Component={Settings} />}
         />
       </Routes>
     </Router>
