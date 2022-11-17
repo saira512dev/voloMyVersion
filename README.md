@@ -1,30 +1,39 @@
-# Getting Started with Create React App
+### VOLO APP (GROUP PROJECT)
+## CONTRIBUTORS: Deja Drummer : https://github.com/DrummerDee , Chris: https://github.com/carpeomnia777
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](images/volo_screenshot.png)
 
-## Available Scripts
+### Description :
+This is the ultimate Todo-List manager you need. This app helps you create your own lists (DUH!) and also see what others are upto too! Set your lists as public so that others can get an idea about your daily accomplishments. You can set them as private if that is how you want. Add other users as friends/ accept their friend requests so that you can share lists with each other. Shared lists can be edited.
+### Link to project: https://volo.vercel.app
 
-In the project directory, you can run:
+### How It's Made:
+Tech used: React JS, Node JS, Express JS, Mongo DB, Material UI
 
+We have put our MERN stack skills into test here. Front end is styled using Material UI and css. React has breathed life into the app. Node JS and Express JS has made building the backend easy and MongoDB makes dealing with the database easy as well.
+
+### Optimizations
+
+
+### Lessons Learned:
+
+
+
+## How To Set Up
 
 ### add .env file
-Add .env file to the config folder of backend
-In .env file, add port and DB_STRING values
+#### Add .env file to the config folder of backend
+#### In .env file, add port and DB_STRING values
 ### `npm run dev` to run both client and server concurrently
 
-Runs the app in the development mode.\
+Both frontend and backend could be run together witha asingle command. This is possible by using 'Concurrently'.
+Front end will run at http://localhost:3000
+Backend will run at https://localhost:1212 (or whatever port value is given in your .env file)
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-
-Front end will run at http://localhost:3000
-Backend will run at https://localhost:1212(or whatever port value is given in your .env file)
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -34,44 +43,5 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### The app has been deployed to vercel
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
