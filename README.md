@@ -5,7 +5,7 @@
 
 ### Description :
 This is the ultimate Todo-List manager you need. This app helps you create your own lists (DUH!) and also see what others are upto too! Set your lists as public so that others can get an idea about your daily accomplishments. You can set them as private if that is how you want. Add other users as friends/ accept their friend requests so that you can share lists with each other. Shared lists can be edited.
-### Link to project: https://volo.vercel.app
+### Link to project: https://volo2.vercel.app
 
 ### How It's Made:
 Tech used: React JS, Node JS, Express JS, Mongo DB, Material UI
