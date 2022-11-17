@@ -1,8 +1,8 @@
-### VOLO APP (GROUP PROJECT)
-## CONTRIBUTORS: Deja Drummer : https://github.com/DrummerDee , Chris: https://github.com/carpeomnia777
+## VOLO APP (GROUP PROJECT)
 
 ![image](images/volo_screenshot.png)
 
+### CONTRIBUTORS: Deja Drummer : https://github.com/DrummerDee , Chris: https://github.com/carpeomnia777
 ### Description :
 This is the ultimate Todo-List manager you need. This app helps you create your own lists (DUH!) and also see what others are upto too! Set your lists as public so that others can get an idea about your daily accomplishments. You can set them as private if that is how you want. Add other users as friends/ accept their friend requests so that you can share lists with each other. Shared lists can be edited.
 ### Link to project: https://volo2.vercel.app
@@ -22,13 +22,13 @@ We have put our MERN stack skills into test here. Front end is styled using Mate
 ## How To Set Up
 
 ### add .env file
-#### Add .env file to the config folder of backend
+#### Add .env file to the config folder inside the root folder
 #### In .env file, add port and DB_STRING values
-### `npm run dev` to run both client and server concurrently
+### Type `npm run dev` to run both client and server concurrently
 
-Both frontend and backend could be run together witha asingle command. This is possible by using 'Concurrently'.
-Front end will run at http://localhost:3000
-Backend will run at https://localhost:1212 (or whatever port value is given in your .env file)
+Both frontend and backend could be run together with a single command. This is possible by using 'Concurrently'.
+Front end will run at http://localhost:3000.
+Backend will run at https://localhost:1212 (or whatever port value is given in your .env file).
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
