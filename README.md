@@ -1,8 +1,8 @@
-### VOLO APP (GROUP PROJECT)
-## CONTRIBUTORS: Deja Drummer : https://github.com/DrummerDee , Chris: https://github.com/carpeomnia777
+## VOLO APP (GROUP PROJECT)
 
 ![image](images/volo_screenshot.png)
 
+### CONTRIBUTORS: Deja Drummer : https://github.com/DrummerDee , Chris: https://github.com/carpeomnia777
 ### Description :
 This is the ultimate Todo-List manager you need. This app helps you create your own lists (DUH!) and also see what others are upto too! Set your lists as public so that others can get an idea about your daily accomplishments. You can set them as private if that is how you want. Add other users as friends/ accept their friend requests so that you can share lists with each other. Shared lists can be edited.
 ### Link to project: https://volo2.vercel.app
