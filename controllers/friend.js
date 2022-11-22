@@ -23,7 +23,7 @@ module.exports = {
                 res.status(200).send({status: true})
                 return;
             }
-            console.log(friends)
+            //console.log(friends)
             res.status(200).send({status: false})
             // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
@@ -45,7 +45,7 @@ module.exports = {
         console.log(typeof(req.params.query))
     try{
         const users = await User.find({userName: {$regex: new RegExp(req.params.query,'i')}, _id: { $ne: req.user.id }}).lean()
-        console.log(users)
+        //console.log(users)
         res.send({users: users})
            // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
@@ -55,11 +55,11 @@ module.exports = {
     searchFriends: async (req,res)=>{
         console.log(typeof(req.params.query))
     try{
-        const users = await User.find({}).populate('user1').populate('user2')
-        // ({userName: {$regex: new RegExp(req.params.query,'i')}, _id: { $ne: req.user.id }}).lean()
-        console.log(users)
-        // res.send({users: users})
-           // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+        const friends = await Friend.find({ $and: [{approved: true}, {$or: [{user1: req.user.id}, {user2: req.user.id}] }]})
+        .populate('user1').populate('user2')
+        const result = friends.filter(friend => (friend.user1._id == req.user.id && friend.user2.userName.match(new RegExp(req.params.query,'i'))) || (friend.user2._id == req.user.id && friend.user1.userName.match(new RegExp(req.params.query,'i'))))       // ({userName: {$regex: new RegExp(req.params.query,'i')}, _id: { $ne: req.user.id }}).lean()
+        console.log(result)
+        res.send({friends: result})
         }catch(err){
             console.log(err)
         }
@@ -68,7 +68,7 @@ module.exports = {
         try{
             const friendRequests = await Friend.find({ $and: [{approved: false}, {user2: req.user.id }]})
             .populate('user1')
-            console.log(friendRequests)
+           // console.log(friendRequests)
             res.send({friendRequests: friendRequests, authUserId: req.user.id})
            // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
         }catch(err){
@@ -81,12 +81,12 @@ module.exports = {
               
             if(friendship.length > 0){
                 
-                console.log('Request Pending')
+               // console.log('Request Pending')
                 res.status(200).send({status: true})
                 return;
             }
 
-            console.log('Friend request not pending')
+            //console.log('Friend request not pending')
             res.status(200).send({status: false})
         }catch(err){
             console.log(err)
