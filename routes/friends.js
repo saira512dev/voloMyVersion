@@ -6,9 +6,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 router.get("/allFriends", ensureAuth, friendController.getAllFriends);
 router.get("/allUsers",ensureAuth,friendController.getAllUsers);
 router.get("/allFriends",ensureAuth,friendController.getAllFriends);
+// router.get("/allUsersWithFriendshipStatus",ensureAuth,friendController.getAllUsersWithFriendshipStatus);
 router.get("/friendRequests",ensureAuth,friendController.getFriendRequests);
 router.post("/addFriend", ensureAuth, friendController.addFriend);
 router.get("/searchUsers/:query", ensureAuth, friendController.searchUsers);
+router.get("/searchFriends/:query", ensureAuth, friendController.searchFriends);
 router.get("/isRequestPending/:friendId", ensureAuth, friendController.isRequestPending);
 router.get("/isFriend/:friendId", ensureAuth, friendController.isFriend);
 router.put('/acceptRequest/:id',ensureAuth, friendController.acceptRequest)

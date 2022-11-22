@@ -15,12 +15,14 @@ export default function UserCard(props) {
   const [requestAlreadySent, setRequestAlreadySent] = useState(false)
   const [isFriend, setIsFriend] = useState(props.isFriend)
   const navigate = useNavigate()
+  console.log(props.user)
   // return console.log(props)
   const friendRequest = {
     user1: props.friendId
   };
 
-
+   
+  
   useEffect(() => {
     const checkIfFriend = async() => {
       try{
@@ -33,7 +35,7 @@ export default function UserCard(props) {
           },
         });
         const data = await response.json();
-        console.log("ISFRIEND",data)
+        //console.log("ISFRIEND",data)
         setIsFriend(data.status)
         // console.log(users)
       } catch(err){
@@ -52,7 +54,7 @@ export default function UserCard(props) {
             },
           });
           const data = await response.json();
-          console.log(data)
+         // console.log(data)
           setRequestAlreadySent(data.status)
           // setAuthUserId(data.authUserId)
           // console.log(users)
@@ -76,7 +78,7 @@ export default function UserCard(props) {
         body: JSON.stringify(friendRequest),
       });
       const data = await response.json();
-      console.log(data)
+     // console.log(data)
       if(data == "removed"){
         setIsFriend(false)
         setRequestAlreadySent(false)
